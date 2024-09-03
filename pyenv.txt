@@ -1,0 +1,189 @@
+SETTING UP AND INSTALLLING PYENV (pyenv) on BASH Terminal scripting
+
+
+STEP 1
+	To begin setting up and using pyenv,
+	use and follow by running these commands:
+
+	1.1 sudo apt update
+
+	 Install Required Dependencies
+
+	1.2 sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
+	
+	Clone the git repo
+
+	1.3 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+
+	1.4 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+
+
+	Restart your shell
+	
+	1.5 exec "$SHELL"
+
+STEP 2
+	Run the following command to check and confirm pyenv is installed:
+
+	2.1 pyenv
+
+	Check and display all available lists of python version installations.
+	For this instruction manual tutorial, we are using python version 3.11.0.
+
+	2.3 pyenv install -l
+
+	To install your specific required installation of python version according to 
+	your needs; type pyenv install and version number.
+
+	2.4 pyenv install 3.11.0
+	
+	Check your installed python version.
+
+	2.5 pyenv versions
+
+	Set your newly installed python version as a global python version for your 
+	system.
+
+	2.6 pyenv global 3.11.0
+
+	Check that your global python changes have been set and applied
+
+	2.7 python3 -V
+
+	Check and Install the latest release candidate: at this time of this instruction set is:
+	 3.13.0rclt
+
+	Type pyenv install -l to the list.
+
+	2.8 pyenv install 3.13.0rclt
+
+STEP 3
+
+NOTICE: IMPORTANT. 
+
+Use the following configuration commands when you want to use a certain specific 
+python version within your current working directory of your virtual 
+environment. Normally this would be to update to the latest release candidate (rc) version. 
+
+Navigate or cd into your current working directory
+
+
+Changing the current working directory python version in your venv (environment).
+	
+	Type the following commands.
+
+	3.1 pyenv local 3.13.0rclt
+	
+	display
+
+	3.2 ll
+
+	3.3 cat .python-version
+
+	3.4 python3 -V
+
+	Create venv (virtual environment) within your working directory
+
+	3.4 python3 -m venv .venv
+
+	3.5 ll
+
+	3.6 ls .venv/bin
+
+	3.7 source .venv/bin/activate
+
+
+STEP 4
+	
+	UPDATING THE LATEST PYTHON VERSION
+
+	4.1 pyenv update
+
+
+
+	
+STEP 5
+
+	INSTALLING pyenv-virtualenv 
+
+	This will install the latest development version of pyenv-virtualenv into the
+ 	$(pyenv root)/plugins/pyenv-virtualenv directory.
+
+	
+	5.1 git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+
+	Add pyenv virtualenv-init to your shell to enable auto-activation of
+ 	virtualenvs. This is entirely optional but pretty useful. See "Activate
+ 	virtualenv" below.
+
+	5.2 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
+
+	Restart shell.
+
+	5.3 exec "$SHELL" 
+
+STEP 6
+
+	USAGE
+
+	Using pyenv virtualenv with pyenv
+
+	To create a virtualenv for the Python version used with pyenv, run pyenv
+ 	virtualenv, specifying the Python version you want and the name of the
+ 	virtualenv directory. For example,
+
+	pyenv virtualenv	[`python version`]	[`folder name`]
+
+	6.1 pyenv virtualenv 2.7.10 my-virtual-env-2.7.10
+
+
+	Create virtualenv from current version
+
+	Check version
+
+
+	6.2 pyenv version
+
+	6.3 pyenv virtualenv [`name of environment`]
+
+	List existing virtualenvs
+
+	6.4 pyenv shell ['virtual environment name`]
+
+	6.5 pyenv virtualenvs
+
+	Activate virtualenv
+
+	6.6 pyenv activate < virtual environment name>
+
+	Deactivate
+
+	6.7 pyenv deactivate
+
+STEP 7
+
+	DELETING EXISTING VIRTUALENV
+
+	7.1 pyenv uninstall my-virtual-env
+	
+	or
+
+	7.2 pyenv virtualenv-delete my-virtual-env
+
+	This will delete virtualenv called my-virtual-env.
+
+
+
+
+
+	
+
+	
+
+	
+
+	
+

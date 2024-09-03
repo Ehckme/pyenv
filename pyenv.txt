@@ -53,6 +53,8 @@ STEP 2
 
 	2.7 python3 -V
 
+	NOW navigate or cd into your desired working directory
+
 	Check and Install the latest release candidate: at this time of this instruction set is:
 	 3.13.0rclt
 
